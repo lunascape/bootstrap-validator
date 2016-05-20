@@ -82,7 +82,8 @@
     custom: {},
     errors: {
       match: 'Does not match',
-      minlength: 'Not long enough'
+      minlength: 'Not long enough',
+      maxlength: 'Too long'
     },
     feedback: {
       success: 'glyphicon-ok',
@@ -102,6 +103,10 @@
     'minlength': function ($el) {
       var minlength = $el.data('minlength')
       return !$el.val() || $el.val().length >= minlength
+    },
+    'maxlength': function ($el) {
+      var maxnlength = $el.data('maxlength')
+      return !$el.val() || $el.val().length <= maxnlength
     }
   }
 
